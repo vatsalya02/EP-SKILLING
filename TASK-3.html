@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+function Validation()
+{
+var user=document.f1.a.value;
+var email=document.f1.b.value;
+if(user=="")
+{
+alert("The User Name is Null");
+}
+var at=email.indexOf('@');
+var dot=email.lastIndexOf('.');
+var len=email.length;
+if((parseInt(dot)-parseInt(at))==1)
+{
+alert("Enter Valid EmailID");
+return false;
+}
+else if((parseInt(len)-parseInt(dot)-1)<2)
+{
+alert("Enter Valid EmailID");
+return false;
+}
+}
+</script>
+</head>
+<body>
+<form name="f1" onSubmit=" return Validation()">
+User Name<input type="text" name="a"><br>
+E-Mail<input type="text" name="b"><br>
+<input type="submit" value="Validate">
+</form>
+</body>
+</html>
