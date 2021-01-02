@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script>
+        function validation() {
+            var user = document.f1.user.value;
+            var password = document.f1.pwd.value;
+            if (user == "" || user == null) {
+                alert("username cannot be empty");
+                return false;
+            }
+            else if (password == "" || password == null) {
+                alert("password cannot be empty");
+                return false;
+            }
+            else if (user.length<= 8) {
+                alert("username must be min 8 characters");
+                return false;
+            }
+
+            else if (password.length <= 8) {
+                alert("password must be min 8 characters");
+                return false;
+            }
+            else if (user.length==password.length) {
+                alert("Welcome");
+                return false;
+            }
+            
+        }
+    </script>
+</head>
+
+<body>
+    <form name="f1" method="post" onsubmit="return  validation()">
+        Username:<input type="text" name="user"><br>
+        Password:<input type="password" name="pwd"><br>
+        <input type="submit" value="login">
+    </form>
+</body>
+
+</html>
