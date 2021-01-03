@@ -1,0 +1,123 @@
+<html>
+<title>Registration Page</title>
+
+<body>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="TASK-1_CSS.css">
+        <script>
+            function verify() {
+                var name = document.form1.name.value;
+                var reg = document.form1.regno.value;
+                var email = document.form1.emailid.value;
+                var checkboxs = document.getElementsByName("game");
+                var count = 0;
+                var gender = document.form1.gender.value;
+                var subject = document.form1.subject.value;
+                var address = document.form1.address.value;
+                var at = email.indexOf('@');
+                var dot = email.lastIndexOf('.');
+                var len = email.length;
+                if (name == "" || reg == "" || email == "" || gender == "" || subject == "" || address == "") {
+                    alert('All fileds must be filled');
+                    return false;
+                }
+                if (name.length < 8) {
+                    alert("name must be min 8 characters");
+                    return false;
+                }
+                if (reg.length < 8) {
+                    alert("reg no must be min 8 digits");
+                    return false;
+                }
+                if (email.length < 8) {
+                    alert("email must be min 8 characters");
+                    return false;
+                }
+                if (address.length < 8) {
+                    alert("address must be min 8 characters");
+                    return false;
+                }
+                if (at == -1 && dot == -1) {
+                    alert("Enter Valid EmailID");
+                    return false;
+                }
+                else if ((parseInt(dot) - parseInt(at)) == 1) {
+                    alert("Enter Valid EmailID");
+                    return false;
+                }
+                else if ((parseInt(len) - parseInt(dot) - 1) < 2) {
+                    alert("Enter Valid EmailID");
+                    return false;
+                }
+                for (var i = 0, l = checkboxs.length; i < l; i++) {
+                    if (checkboxs[i].checked) {
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                    alert("Please check a min one checkbox");
+                    return false;
+                }
+
+            }
+        </script>
+    </head>
+    <form name="form1" method="post" onsubmit="return  verify()">
+        <br>
+        <h1 align="center" class="ab">REGISTRATION</h1>
+        <table align="center" class="bordered">
+            <tr>
+                <td>Name of Student&nbsp;&nbsp;&nbsp;</td>
+                <td>: &nbsp;&nbsp;<input type="text" name="name"><br></td>&nbsp;&nbsp;&nbsp;&nbsp;
+            </tr>
+            <tr>
+                <td>Regd Number&nbsp;&nbsp;&nbsp;</td>
+                <td>: &nbsp;&nbsp;<input type="text" name="regno"><br></td>
+            </tr>
+            <tr>
+                <td>Email Id&nbsp;&nbsp;&nbsp;</td>
+                <td>: &nbsp;&nbsp;<input type="text" name="emailid"><br></td>
+            </tr>
+            <tr>
+                <td>Favourite Game&nbsp;&nbsp;</td>
+                <td>: &nbsp;&nbsp;<input type="checkbox" name="game" value="Cricket"> CRICKET
+                    &nbsp; &nbsp;
+                    <input type="checkbox" name="game" value="football"> FOOTBALL
+                    &nbsp; &nbsp;
+                    <input type="checkbox" name="game" value="hockey"> HOCKEY
+                    &nbsp; &nbsp;
+                    <input type="checkbox" name="game" value="chess"> CHESS
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>: &nbsp;&nbsp;<input type="radio" name="gender">MALE &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
+                        name="gender">FEMALE<br></td>
+            </tr>
+            <tr>
+                <td>Favourite subject</td>
+                <td>: &nbsp;&nbsp;<select name="subject">
+                        <option>Select</option>
+                        <option value="C">C</option>
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                        <option value="Python">Python</option>
+                    </select>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">Address</td>
+                <td>:<textarea cols="50" rows="4" name="address"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" style='position:relative;left:300px;' value="SUBMIT"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
