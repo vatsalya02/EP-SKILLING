@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Students SYSTEM "student.dtd">
+<?xml-stylesheet type="text/xsl" href="Students.xsl"?>
+<Students>
+	<student sid="a">	
+		<regno>190030048</regno>	
+		<name>Lakshmi</name>
+		<marks>90</marks>
+		<email>alv@gmail.com</email>
+		<class>1st Year</class>
+	</student>
+	<student sid="b">
+		<regno>190030341</regno>
+		<name>Vatsalya</name>
+		<marks>95</marks>
+		<email>alv02@gmail.com</email>
+		<class>1st Year</class>
+	</student>
+	<student sid="c">
+		<regno>18003044</regno>		
+		<name>sriedvi</name>
+		<marks>95</marks>
+		<email>alsridevi02@gmail.com</email>
+		<class>2nd Year</class>
+	</student>
+	<student sid="d">
+		<regno>19003003</regno>		
+		<name>sita</name>
+		<marks>95</marks>
+		<email>alsridevi02@gmail.com</email>
+		<class>1st Year</class>
+	</student>
+	<student sid="e">
+		<regno>170030048</regno>
+		<name>Amulya</name>
+		<marks>95</marks>
+		<email>alsridevi02@gmail.com</email>
+		<class>3rd year</class>
+	</student>	
+</Students>
